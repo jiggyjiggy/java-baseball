@@ -11,9 +11,7 @@ import java.util.List;
 
 public class Gamer {
     public List<Integer> inputThreeDiffDigit() {
-        Announcement.INPUT_NUMBER.printAnnouncement();
         String input = Console.readLine();
-
         new ThreeDiffDigitValidator().validate(input);
 
         return convertIntegerList(input);

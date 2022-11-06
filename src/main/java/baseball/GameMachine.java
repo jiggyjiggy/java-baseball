@@ -38,7 +38,6 @@ public class GameMachine {
     }
 
     private void countBallType(int digitOfGame, int digitOfGamer, int idx, int jdx, Game game) {
-
         if (digitOfGame == digitOfGamer) {
             if (idx == jdx) {
                 game.setNumberOfStrike(game.getNumberOfStrike() + 1);
@@ -73,4 +72,8 @@ public class GameMachine {
         return input.equals(Menu.REPLAY.getMenuNumber());
     }
 
+    public List<Integer> askInputThreeDiffDigit(Gamer gamer) {
+        Announcement.INPUT_NUMBER.printAnnouncement();
+        return gamer.inputThreeDiffDigit();
+    }
 }

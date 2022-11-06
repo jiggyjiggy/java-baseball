@@ -20,12 +20,11 @@ public class Application {
             while(game.getNumberOfStrike() != 3) {
                 game.initializeBallCount();
 
-                List<Integer> threeDiffDigitOfGamer = gamer.inputThreeDiffDigit();
+                List<Integer> threeDiffDigitOfGamer = gameMachine.askInputThreeDiffDigit(gamer);
                 gameMachine.updateBallCount(threeDiffDigitOfGamer, game);
 
                 System.out.println(game.getBallCount());
             }
-            Announcement.MATCH_THREE_NUMBER.printAnnouncement();
             Announcement.GAME_END.printlnAnnouncement();
 
             playFlag = gameMachine.askReplay(gamer);

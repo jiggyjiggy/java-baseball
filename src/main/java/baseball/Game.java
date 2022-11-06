@@ -14,10 +14,6 @@ public class Game {
 
     private int numberOfBall;
     private int numberOfStrike;
-    public void initializeBallCount() {
-        numberOfBall = 0;
-        numberOfStrike = 0;
-    }
     public int getNumberOfBall() {
         return numberOfBall;
     }
@@ -40,5 +36,10 @@ public class Game {
         this.ballCount = ballCount;
     }
 
+    public void initializeBallCount() {
+        numberOfBall = 0;
+        numberOfStrike = 0;
+        ballCount = null;
+    }
 
 }
