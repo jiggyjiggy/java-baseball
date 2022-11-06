@@ -4,9 +4,6 @@ import baseball.validators.PlayAgainOrNotValidator;
 import baseball.validators.ThreeDiffDigitValidator;
 import camp.nextstep.edu.missionutils.Console;
 
-import java.util.ArrayList;
-import java.util.List;
-
 
 public class Gamer {
     public String inputThreeDiffDigit() {

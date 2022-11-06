@@ -90,6 +90,4 @@ public class GameMachine {
         return input.equals(Menu.REPLAY.getMenuNumber());
     }
 
-
-
 }

@@ -5,10 +5,10 @@ import baseball.enums.Menu;
 public class PlayAgainOrNotValidator {
 
     public void validate(String input) {
-        checkMenuInteger(input);
+        checkMenuNumber(input);
     }
 
-    private void checkMenuInteger(String input) {
+    private void checkMenuNumber(String input) {
         if (!(input.equals(Menu.REPLAY.getMenuNumber()) || input.equals(Menu.QUIT.getMenuNumber()))) {
             throw new IllegalArgumentException();
         }

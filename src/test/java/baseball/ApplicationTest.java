@@ -29,14 +29,6 @@ class ApplicationTest extends NsTest {
         );
     }
 
-//    @Nested
-//    class ThreeDiffDigitValidatorTest {
-//        @Test
-//        void input값이_정수가_아니면_() {
-//            assertThat()
-//        }
-//    }
-
     @Override
     public void runMain() {
         Application.main(new String[]{});

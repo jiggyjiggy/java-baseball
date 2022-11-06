@@ -1,9 +1,13 @@
 package baseball.validators;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ThreeDiffDigitValidator {
     public void validate(String input) {
         checkLengthThree(input);
         checkInteger(input);
+        checkDiffDigit(input);
     }
 
     private void checkLengthThree(String input) {
@@ -16,6 +20,19 @@ public class ThreeDiffDigitValidator {
         try {
             Integer.parseInt(input);
         } catch (NumberFormatException e) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    private void checkDiffDigit(String input) {
+        List<Character> charList = new ArrayList<>();
+        for (Character ch:
+             input.toCharArray()) {
+            charList.add(ch);
+        }
+        long distinctInputLength = charList.stream().distinct().count();
+
+        if (distinctInputLength != input.length()) {
             throw new IllegalArgumentException();
         }
     }
