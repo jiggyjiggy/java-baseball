@@ -1,6 +1,7 @@
 package baseball;
 
 import camp.nextstep.edu.missionutils.test.NsTest;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static camp.nextstep.edu.missionutils.test.Assertions.assertRandomNumberInRangeTest;
@@ -27,6 +28,14 @@ class ApplicationTest extends NsTest {
                         .isInstanceOf(IllegalArgumentException.class)
         );
     }
+
+//    @Nested
+//    class ThreeDiffDigitValidatorTest {
+//        @Test
+//        void input값이_정수가_아니면_() {
+//            assertThat()
+//        }
+//    }
 
     @Override
     public void runMain() {

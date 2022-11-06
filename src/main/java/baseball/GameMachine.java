@@ -3,7 +3,6 @@ package baseball;
 import baseball.enums.Announcement;
 import baseball.enums.BallCount;
 import baseball.enums.Menu;
-import camp.nextstep.edu.missionutils.Console;
 import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.ArrayList;
@@ -60,25 +59,18 @@ public class GameMachine {
             stringBuilder.append(game.getNumberOfStrike()).append(BallCount.STRIKE.getKorean());
         }
 
-        if (game.getNumberOfStrike() == 0 && game.getNumberOfStrike() == 0) {
+        if (game.getNumberOfBall() == 0 && game.getNumberOfStrike() == 0) {
             stringBuilder.append(BallCount.NOTHING.getKorean());
         }
 
         return String.valueOf(stringBuilder);
     }
 
-    public boolean askReplay() {
+    public boolean askReplay(Gamer gamer) {
         Announcement.ASK_REPLAY.printlnAnnouncement();
-        String input = Console.readLine();
+        String input = gamer.inputPlayAgainOrNot();
 
-        if (input.equals(Menu.REPLAY.getMenuNumber())) {
-            return true;
-        }
-        if (input.equals(Menu.QUIT.getMenuNumber())) {
-            return false;
-        }
-
-        throw new IllegalArgumentException();
+        return input.equals(Menu.REPLAY.getMenuNumber());
     }
 
 }
