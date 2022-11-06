@@ -20,6 +20,24 @@ public class GameMachine {
         return integerList;
     }
 
+    public List<Integer> askInputThreeDiffDigit(Gamer gamer) {
+        Announcement.INPUT_NUMBER.printAnnouncement();
+        String input = gamer.inputThreeDiffDigit();
+        return convertIntegerList(input);
+    }
+
+    private List<Integer> convertIntegerList(String str) {
+        List<Integer> integerList = new ArrayList<>();
+
+        String[] strArr = str.split("");
+        for (String element:
+                strArr) {
+            Integer convertedElement = Integer.parseInt(element);
+            integerList.add(convertedElement);
+        }
+        return integerList;
+    }
+
     public void updateBallCount(List<Integer> threeDiffDigitOfGamer, Game game) {
         judgeBall(threeDiffDigitOfGamer, game);
         String ballCount = convertBallCountStr(game);
@@ -72,8 +90,6 @@ public class GameMachine {
         return input.equals(Menu.REPLAY.getMenuNumber());
     }
 
-    public List<Integer> askInputThreeDiffDigit(Gamer gamer) {
-        Announcement.INPUT_NUMBER.printAnnouncement();
-        return gamer.inputThreeDiffDigit();
-    }
+
+
 }
